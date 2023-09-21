@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<title>{% block title%}{% endblock%}</title>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+	<link rel='stylesheet' href='{% static "CSS/layout.css" %}' type='text/css'>
+
+    </head>
+
+    <header>
+<h1>TEST</h1>
+        <div class="topnav">
+
+					<a href="{% url 'sw_home' %}" class="dropdown-item">Home</a>
+					<a href="{% url 'characters' %}" class="dropdown-item">View Characters </a>
+					<a href="{% url 'add_character' %}" class="dropdown-item">Add New Character</a>
+
+		</div>
+
+    </header>
+<body>
+{% block content %}{% endblock %}
+
+</body>
+
+
+
+<br>
+<br>
+<hr>
+<section id="block-footer">
+			<p id="footer"> 2023, James Santa</p>
+</section>
+</html>

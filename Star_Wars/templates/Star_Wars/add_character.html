@@ -1,0 +1,34 @@
+{% extends "sw_base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title%}Add New Character{% endblock %}
+
+{% block content %}
+    <head>
+    <link rel='stylesheet' href='{% static "CSS/layout.css" %}' type='text/css'>
+    </head>
+
+    <h1>Add A Character To The Star Wars Character Database</h1>
+
+    <hr>
+    <div class="text-center" id="entry">
+        <h5>Add Your Character</h5>
+
+
+        <form method="POST">
+          {% csrf_token %}
+          {{ form|crispy }}
+        <input type="submit" value="SUBMIT" />
+        </form>
+
+    </div>
+<br>
+<br>
+<br>
+<body id="bg" style="background-image:url('{% static 'pics/characters.webp'%}');">
+
+</body>
+
+
+{% endblock %}

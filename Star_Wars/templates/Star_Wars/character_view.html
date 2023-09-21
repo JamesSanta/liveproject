@@ -1,0 +1,80 @@
+{% extends "sw_base.html" %}
+{% load static %}
+
+
+{% block title%}View Characters{% endblock %}
+
+
+{% block content %}
+<header>
+
+    <hr>
+</header>
+
+
+<body id="bg2" style="background-image:url('{% static 'pics/rey.webp'%}');">
+<h1 class="title">Star Wars Character Database</h1>
+
+
+<div class="container">
+                <div class="row infinite-container">
+                    {% for character in characters %}
+                        <div class="col-md-6 infinite-item">
+                            <div class="card mb-4 shadow-sm">
+                                <img class="img-thumbnail"  src="{{post.image.url}}"/>
+                                <div class="card-body">
+                                    <h5>{{character.name}}</h5>
+                                    <ul class="card-text" id="card">
+                                        <li>Species: {{ character.species }}</li>
+                                        <li>Movie: {{ character.movie }}</li>
+                                        <li>Side: {{ character.side }}</li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% if page_obj.has_next %}
+                <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}"></a>
+                {% endif %}
+                <div class="d-flex justify-content-center" style="display:none;">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+    <script type= "text/javascript" src="/static/jquery-2.2.4.min.js"></script>
+    <script type= "text/javascript" src="/static/jquery.waypoints.min.js"></script>
+    <script type= "text/javascript" src="/static/infinite.min.js"></script>
+<script>
+var infinite = new Waypoint.Infinite({
+        element: $('.infinite-container')[0],
+        handler: function(direction) {
+
+    },
+    offset: 'bottom-in-view',
+
+    onBeforePageLoad: function () {
+    $('.spinner-border').show();
+    },
+    onAfterPageLoad: function () {
+    $('.spinner-border').hide();
+    }
+
+    });
+</script>
+
+
+</body>
+
+
+
+
+
+
+<br>
+
+
+{% endblock %}

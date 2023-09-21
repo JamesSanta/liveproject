@@ -1,0 +1,47 @@
+
+#bg2{
+    margin: 0;
+    padding: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+#bg1{
+    margin: 0;
+    padding: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#bg{
+    margin: 0;
+    padding: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+
+h1{
+    color: white;
+    position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#block-footer{
+display: block;
+justify-content: center;
+text-align: center;
+color: white
+}
+
+.title{
+    color: white;
+}
